@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Manager</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #343a40;
+      text-align: center;
+      font-weight: bold;
+    }
+    form {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .table {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .table thead {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .table img {
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    #filter {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .btn {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="mb-4">File Manager</h1>
+  <div class="row">
+
+    <div class="col-md-4">
+      <form id="upload-form">
+        <h5 class="mb-3 text-primary">Upload New File</h5>
+        <div class="mb-3">
+          <label for="file" class="form-label">Upload File</label>
+          <input type="file" class="form-control" id="file" name="file" required>
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select class="form-select" id="category" name="category" required>
+            <option value="Invoice">Invoice</option>
+            <option value="Picture">Picture</option>
+            <option value="Certificate">Certificate</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+
+
+    <div class="col-md-8">
+      <div class="mb-3">
+        <select id="filter" class="form-select">
+          <option value="">All Categories</option>
+          <option value="Invoice">Invoice</option>
+          <option value="Picture">Picture</option>
+          <option value="Certificate">Certificate</option>
+        </select>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Preview</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Size (KB)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="file-list">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
